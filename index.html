@@ -367,8 +367,8 @@
           var base64data = e.target.result; // Base64-encoded image data
 
           // Display the Base64 code in the textarea
-          let requiredBaseData = base64data.replace(/^data:image\/(jpeg|jpg);base64,/, "");
-          document.getElementById('imageBase64').value = requiredBaseData;
+          // let requiredBaseData = base64data.replace(/^data:image\/(jpeg|jpg);base64,/, "");
+          document.getElementById('imageBase64').value = base64data;
         };
 
         // Read in the image file as a data URL.
@@ -396,7 +396,7 @@
       fetch(scriptURL, { method: 'POST', body: new FormData(form) })
         .then(response => alert("Thank you! your form is submitted successfully."))
         .then(() => { window.location.reload(); })
-        .catch(error => alert("error"))
+        .catch(error => alert("Image size is very high."))
     })
 
   </script>
